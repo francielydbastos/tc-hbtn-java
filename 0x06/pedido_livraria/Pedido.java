@@ -5,9 +5,9 @@ public class Pedido {
     public double calcularTotal() {
         double somaTotal = 0;
         for (ItemPedido item : getItens()){
-            somaTotal = somaTotal + item.getProduto().getPrecoBruto() * item.getQuantidade();
+            somaTotal = somaTotal + item.getProduto().obterPrecoLiquido() * item.getQuantidade();
         }
-        return somaTotal - somaTotal * getPercentualDesconto()/100;
+        return somaTotal * (1 - getPercentualDesconto()/100);
     }
 
     public Pedido(double percentualDesconto, ItemPedido[] itens) {
