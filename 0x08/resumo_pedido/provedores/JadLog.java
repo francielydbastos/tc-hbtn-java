@@ -14,4 +14,9 @@ public class JadLog implements ProvedorFrete{
 
         return new Frete(valorFrete, TipoProvedorFrete.JADLOG);
     }
+
+    @Override
+    public TipoProvedorFrete obterTipoProvedorFrete() {
+        return TipoProvedorFrete.JADLOG;
+    }
 }
