@@ -2,25 +2,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListaTodo {
-    List<Tarefa> tarefa;
+    private ArrayList<Tarefa> tarefas;
 
     public ListaTodo() {
-        this.tarefa = new ArrayList<>();
+        this.tarefas = new ArrayList<>();
     }
 
-    public void adicionarTarefa(Tarefa tarefaAdd) {
-        for (Tarefa itemTarefa : this.tarefa) {
-            if (itemTarefa.getIdentificador() == tarefaAdd.getIdentificador()) {
-                throw new IllegalArgumentException("Tarefa com identificador " + tarefaAdd.getIdentificador() + " ja existente na lista");
+    public void adicionarTarefa(Tarefa tarefa) {
+        for (Tarefa itemTarefa : this.tarefas) {
+            if (itemTarefa.getIdentificador() == tarefa.getIdentificador()) {
+                throw new IllegalArgumentException("Tarefa com identificador " + tarefa.getIdentificador() + " ja existente na lista");
             }
         }
-        this.tarefa.add(tarefaAdd);
+        this.tarefas.add(tarefa);
     }
 
     public boolean marcarTarefaFeita(int identificador) {
-        for (Tarefa itemTarefa : this.tarefa) {
-            if (itemTarefa.getIdentificador() == identificador) {
-                itemTarefa.setEstahFeita(true);
+        for (Tarefa tarefa : this.tarefas) {
+            if (tarefa.getIdentificador() == identificador) {
+                tarefa.setEstahFeita(true);
                 return true;
             }
         }
@@ -28,9 +28,9 @@ public class ListaTodo {
     }
 
     public boolean desfazerTarefa(int identificador) {
-        for (Tarefa itemTarefa : this.tarefa) {
-            if (itemTarefa.getIdentificador() == identificador) {
-                itemTarefa.setEstahFeita(false);
+        for (Tarefa tarefa : this.tarefas) {
+            if (tarefa.getIdentificador() == identificador) {
+                tarefa.setEstahFeita(false);
                 return true;
             }
         }
@@ -38,23 +38,23 @@ public class ListaTodo {
     }
 
     public void desfazerTodas() {
-        for (Tarefa tarefa : this.tarefa) {
+        for (Tarefa tarefa : this.tarefas) {
             tarefa.setEstahFeita(false);
         }
     }
 
     public void fazerTodas() {
-        for (Tarefa itemTarefa : this.tarefa) {
-            itemTarefa.setEstahFeita(true);
+        for (Tarefa tarefa : this.tarefas) {
+            tarefa.setEstahFeita(true);
         }
     }
 
     public void listarTarefas() {
-        for (Tarefa itemTarefa : this.tarefa) {
-            if (itemTarefa.isEstahFeita()) {
-                System.out.println("[X]  Id: " + itemTarefa.getIdentificador() + " - Descricao: " + itemTarefa.getDescricao());
+        for (Tarefa tarefa : this.tarefas) {
+            if (tarefa.isEstahFeita()) {
+                System.out.println("[X]  Id: " + tarefa.getIdentificador() + " - Descricao: " + tarefa.getDescricao());
             } else {
-                System.out.println("[ ]  Id: " + itemTarefa.getIdentificador() + " - Descricao: " + itemTarefa.getDescricao());
+                System.out.println("[ ]  Id: " + tarefa.getIdentificador() + " - Descricao: " + tarefa.getDescricao());
             }
         }
     }
