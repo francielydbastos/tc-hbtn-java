@@ -2,13 +2,9 @@ public class Program {
     public static void main(String[] args) {
         ListaTodo todo = new ListaTodo();
 
-        try {
-            todo.adicionarTarefa(new Tarefa("Ler conteudo aula Lambda", 1));
-            todo.adicionarTarefa(new Tarefa("Aprender Design Patterns", 2));
-            todo.adicionarTarefa(new Tarefa("Limpar o quarto", 3));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        todo.adicionarTarefa(new Tarefa("Ler conteudo aula Lambda", 1));
+        todo.adicionarTarefa(new Tarefa("Aprender Design Patterns", 2));
+        todo.adicionarTarefa(new Tarefa("Limpar o quarto", 3));
 
         todo.marcarTarefaFeita(1);
 
