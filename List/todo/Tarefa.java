@@ -26,7 +26,7 @@ public class Tarefa {
     }
 
     public void modificarDescricao(String descricao) throws Exception {
-        if (descricao == null || descricao.isBlank() || descricao.isEmpty() || descricao.equals("")) {
+        if (descricao == null || descricao.isBlank() || descricao.isEmpty()) {
             throw new Exception("Descricao de tarefa invalida");
         }
         this.descricao = descricao;
