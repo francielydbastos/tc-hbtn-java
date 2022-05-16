@@ -54,7 +54,7 @@ public class Banco {
                 if (imprimeTransacoes) {
                     int j = 1;
                     for (Double transacao : cliente.getTransacoes()) {
-                        System.out.println("    [" + j + "] valor " + transacao);
+                        System.out.println("  [" + j + "] valor " + transacao);
                         j++;
                     }
                 }
