@@ -33,4 +33,13 @@ public class Agencia {
         }
         return false;
     }
+
+    public boolean adicionarTransacaoCliente(String nomeCliente, double valorTransacao) {
+        Cliente cliente = this.buscarCliente(nomeCliente);
+        if (cliente != null) {
+            cliente.adicionarTransacao(valorTransacao);
+            return true;
+        }
+        return false;
+    }
 }

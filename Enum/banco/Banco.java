@@ -38,11 +38,7 @@ public class Banco {
     public boolean adicionarTransacaoCliente(String nomeAgencia, String nomeCliente, double valorTransacao) {
         Agencia agencia = buscarAgencia(nomeAgencia);
         if (agencia != null) {
-            Cliente cliente = agencia.buscarCliente(nomeCliente);
-            if (cliente != null) {
-                cliente.adicionarTransacao(valorTransacao);
-                return true;
-            }
+            agencia.adicionarTransacaoCliente(nomeCliente, valorTransacao);
         }
         return false;
     }
@@ -58,7 +54,7 @@ public class Banco {
                 if (imprimeTransacoes) {
                     int j = 1;
                     for (Double transacao : cliente.getTransacoes()) {
-                        System.out.println("[" + j + "] valor " + transacao);
+                        System.out.println("    [" + j + "] valor " + transacao);
                         j++;
                     }
                 }
