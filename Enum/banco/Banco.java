@@ -49,7 +49,7 @@ public class Banco {
         if (agencia != null) {
             int i = 1;
             for (Cliente cliente : agencia.getClientes()) {
-                System.out.println("Cliente: " + cliente.getNome() + "[" + i + "]");
+                System.out.println("Cliente: " + cliente.getNome() + " [" + i + "]");
                 i++;
                 if (imprimeTransacoes) {
                     int j = 1;
