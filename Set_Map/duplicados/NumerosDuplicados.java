@@ -4,16 +4,13 @@ public class NumerosDuplicados {
 
     public static TreeSet<Integer> buscar(int[] list) {
         TreeSet<Integer> returnSet = new TreeSet<>();
-        ArrayList<Integer> auxSet = new ArrayList<>();
+        HashSet<Integer> auxSet = new HashSet<>();
 
         for (int number : list) {
-            auxSet.add(number);
-        }
-
-        for(Integer number : auxSet) {
-            if(Collections.frequency(auxSet, number) > 1) {
+            if (auxSet.contains(number)) {
                 returnSet.add(number);
             }
+            auxSet.add(number);
         }
         return returnSet;
     }
