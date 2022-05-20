@@ -1,1 +1,1 @@
-Projetos desenvolvidos nos módulos de Java (Novice, Amateur e Master) do bootcamp Tomorrow Talent's da CI&T, em parceria com a TechCamps.
+Projetos desenvolvidos nos módulos de Java (Novice, Amateur e Master) do bootcamp Tomorrow's Talents da CI&T, em parceria com a TechCamps.
