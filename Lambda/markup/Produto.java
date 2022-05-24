@@ -6,7 +6,7 @@ public class Produto {
     private double preco;
     private double percentualMarkup;
     public Supplier<Double> precoComMarkUp;
-    public Consumer<Double> atualizarMarkUp = this::setPercentualMarkup;
+    public Consumer<Double> atualizarMarkUp = x -> setPercentualMarkup(x);
 
     public Produto(double preco, String nome) {
         this.nome = nome;
