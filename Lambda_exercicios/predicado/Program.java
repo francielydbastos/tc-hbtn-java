@@ -1,5 +1,3 @@
-package Lambda_exercicios.predicado;
-
 import java.lang.reflect.Method;
 import java.util.*;
 import java.util.function.*;
