@@ -12,24 +12,16 @@ public class SerializarEstudantes<Estudante> {
     }
 
     public void serializar(List<Estudante> estudantes) {
-        try {
-            FileOutputStream fileOut = new FileOutputStream(this.nomeArquivo);
-            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
-
+        try (ObjectOutputStream objectOut = new ObjectOutputStream(new FileOutputStream(this.nomeArquivo))){
             objectOut.writeObject(estudantes);
-            objectOut.close();
         } catch(Exception e) {
             System.out.println("Nao foi possivel serializar");
         }
     }
 
     public List<Estudante> desserializar() {
-        try {
-            FileInputStream fileIn = new FileInputStream(this.nomeArquivo);
-            ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-
+        try (ObjectInputStream objectIn = new ObjectInputStream(new FileInputStream(this.nomeArquivo))){
             @SuppressWarnings("unchecked") List<Estudante> estudantesList = (List<Estudante>) objectIn.readObject();
-            objectIn.close();
             return estudantesList;
         } catch(Exception e) {
             System.out.println("Nao foi possivel desserializar");
